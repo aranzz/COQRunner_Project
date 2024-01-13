@@ -522,7 +522,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a3a1003ad0189b4da946c4a298af4fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Controls: {fileID: 989298408}
+  Controls: {fileID: 0}
   roadSection: {fileID: 8429711406024172275, guid: 8dbaac4010d1fdb46a5ed149ecd75ffd, type: 3}
 --- !u!135 &989298404
 SphereCollider:
