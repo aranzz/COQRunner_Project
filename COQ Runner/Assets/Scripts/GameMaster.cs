@@ -25,7 +25,13 @@ public class GameMaster : MonoBehaviour
 
     void IncreaseSpeed()
     {
-     currentVelocity.velocity = currentVelocity.velocity + velocityMultiplier;
+         currentVelocity.velocity = currentVelocity.velocity + velocityMultiplier;
+
+        if (currentVelocity.velocity >= 60)
+        {
+            currentVelocity.velocity = 60;
+        }
+
     }
 
    
@@ -48,10 +54,7 @@ public class GameMaster : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (currentVelocity.velocity >= 80)
-        {
-            currentVelocity.velocity = 80;
-        }
+      
 
         if (powerUpActive)
         {
