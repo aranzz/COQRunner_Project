@@ -7,6 +7,8 @@ public class Move : MonoBehaviour
     public PowerUp powerUpinmmunity;
 
     public GameMaster powerUpActive;
+    public GameMaster powerUpEggActive;
+
 
     public GameMaster currentTime;
     public GameMaster currentScore;
@@ -23,6 +25,8 @@ public class Move : MonoBehaviour
         player = GameObject.FindWithTag("Player");
 
         powerUpinmmunity = FindObjectOfType<PowerUp>();
+
+        powerUpEggActive = FindObjectOfType<GameMaster>();
         powerUpActive = FindObjectOfType<GameMaster>();
 
         currentTime = FindObjectOfType<GameMaster>();
@@ -80,7 +84,16 @@ public class Move : MonoBehaviour
             {
                 if (other.gameObject.CompareTag("Player"))
                 {
-                    Time.timeScale = 0; 
+                    if(powerUpEggActive.powerUpEggActive == false)
+                    {
+                        Time.timeScale = 0;
+                    }
+                    else
+                    {
+
+                        StartCoroutine(ExtraLife());
+                       // Destroy(gameObject);
+                    }
                 }
             }
 
@@ -106,5 +119,13 @@ public class Move : MonoBehaviour
             }
         }
 
+    }
+
+    IEnumerator ExtraLife()
+    {
+
+        yield return new WaitForSeconds(3);
+
+        powerUpEggActive.powerUpEggActive = false;
     }
 }

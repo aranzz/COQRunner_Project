@@ -8,9 +8,13 @@ public class PowerUpGenerator : MonoBehaviour
     public GameObject[] positions;
 
     public GameMaster powerUpActive;
+
+    public GameMaster powerUpEggActive;
+
     // Start is called before the first frame update
     void Start()
     {
+        powerUpEggActive = FindObjectOfType<GameMaster>();
         powerUpActive = FindObjectOfType<GameMaster>();
 
         GameObject selectedItem = powerUps[Random.Range(0, powerUps.Length)];
@@ -25,7 +29,7 @@ public class PowerUpGenerator : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (powerUpActive.powerUpActive == true)
+        if (powerUpActive.powerUpActive == true || powerUpEggActive.powerUpEggActive == true)
         {
             Destroy(gameObject);
         }

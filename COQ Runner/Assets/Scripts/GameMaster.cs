@@ -7,15 +7,13 @@ public class GameMaster : MonoBehaviour
 {
     public Move currentVelocity;
 
-    public PowerUp powerUpinmmunity;
-
-    public PowerUp powerUpBoost;
-
     public float time;
 
     public bool timerOn = false;
 
     public bool powerUpActive = false;
+
+    public bool powerUpEggActive = false;
 
     public int score;
 
@@ -41,8 +39,6 @@ public class GameMaster : MonoBehaviour
         score = 0;
         powerUpLife = 0;
 
-        powerUpinmmunity = FindObjectOfType<PowerUp>();
-        powerUpBoost = FindObjectOfType<PowerUp>();
         currentVelocity = FindObjectOfType<Move>();
 
       InvokeRepeating("IncreaseSpeed", 5f, 20f); 
@@ -69,8 +65,19 @@ public class GameMaster : MonoBehaviour
           
         }
 
+        if (powerUpEggActive)
+        {
 
-        if(timerOn)
+            Debug.Log("huevo activado");
+            
+        }
+        else
+        {
+            Debug.Log("huevo NO activado");
+
+        }
+
+        if (timerOn)
         {
             time += Time.deltaTime;
         }

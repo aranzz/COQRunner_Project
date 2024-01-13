@@ -9,6 +9,8 @@ public class PowerUp : MonoBehaviour
 
     public GameMaster powerUpActive;
 
+    public GameMaster powerUpEggActive;
+
 
     public Move currentVelocity;
     public bool inmmunity;
@@ -23,6 +25,7 @@ public class PowerUp : MonoBehaviour
         currentVelocity = FindObjectOfType<Move>();
 
         powerUpActive = FindObjectOfType<GameMaster>();
+        powerUpEggActive = FindObjectOfType<GameMaster>();
     }
 
     // Update is called once per frame
@@ -32,7 +35,7 @@ public class PowerUp : MonoBehaviour
         transform.position += new Vector3(0, 0, velocity) * Time.deltaTime;
 
 
-        if (powerUpActive.powerUpActive == true)
+        if (powerUpActive.powerUpActive == true || powerUpEggActive.powerUpEggActive == true)
         {
             Destroy(gameObject);
         }
@@ -52,10 +55,19 @@ public class PowerUp : MonoBehaviour
             if (other.gameObject.CompareTag("Player"))
             {
                 inmmunity = true;
-              //boost = true;
+            
                 powerUpActive.powerUpActive = true;
-              //currentVelocity.velocity = 150;
-              //currentVMultiplier.velocityMultiplier = 20;  
+              
+                Destroy(gameObject);
+            }
+        }
+
+        if (gameObject.CompareTag("Egg"))
+        {
+            if (other.gameObject.CompareTag("Player"))
+            {
+                powerUpEggActive.powerUpEggActive = true;
+               
                 Destroy(gameObject);
             }
         }
