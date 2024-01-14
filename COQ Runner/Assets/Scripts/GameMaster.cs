@@ -6,7 +6,12 @@ using TMPro;
 
 public class GameMaster : MonoBehaviour
 {
-    public ParticleSystem running;
+    public GameObject runningSmall;
+
+    public GameObject running;
+    public ParticleSystem dirt;
+
+    public bool dirtLife;
 
     public Move currentVelocity;
 
@@ -46,6 +51,8 @@ public class GameMaster : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        runningSmall.SetActive(false);
+        running.SetActive(false);
         scoreVa.text = "0";
         score = 0;
         powerUpLife = 0;
@@ -61,11 +68,23 @@ public class GameMaster : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (currentVelocity.velocity >= 75)
+        {
+            runningSmall.SetActive(true);
+        }
+        else
+        {
+            runningSmall.SetActive(false);
+
+        }
+
+
         scoreVa.text = score.ToString();
 
         if (powerUpActive)
         {
-            running.Play();
+            running.SetActive(true);
+
             powerUpVa.text = "Crown Active";
 
             powerUpLife += Time.deltaTime;
@@ -74,6 +93,8 @@ public class GameMaster : MonoBehaviour
             {
                 powerUpActive = false;
                 powerUpLife = 0;
+                running.SetActive(false);
+
 
             }
 
@@ -112,5 +133,12 @@ public class GameMaster : MonoBehaviour
         }
 
         Debug.Log("velocity: " + currentVelocity.velocity);
+
+
+        if(dirtLife == false)
+        {
+            dirt.Stop();
+        }
+
     }
 }

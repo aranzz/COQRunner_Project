@@ -10,7 +10,7 @@ public class Move : MonoBehaviour
     public GameMaster powerUpEggActive;
     public GameMaster powerUpBullActive;
 
-
+    public GameMaster dirtLife;
 
     public GameMaster currentTime;
     public GameMaster currentScore;
@@ -31,6 +31,8 @@ public class Move : MonoBehaviour
         powerUpEggActive = FindObjectOfType<GameMaster>();
         powerUpActive = FindObjectOfType<GameMaster>();
         powerUpBullActive = FindObjectOfType<GameMaster>();
+
+        dirtLife = FindObjectOfType<GameMaster>();
 
         currentTime = FindObjectOfType<GameMaster>();
         currentScore = FindObjectOfType<GameMaster>();
@@ -89,6 +91,7 @@ public class Move : MonoBehaviour
                 {
                     if(powerUpEggActive.powerUpEggActive == false)
                     {
+                        dirtLife.dirtLife = false;
                         Time.timeScale = 0;
                     }
                     else
