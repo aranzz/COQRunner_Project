@@ -94,6 +94,8 @@ Material:
     - _SpecularHighlights: 1
     - _SrcBlend: 1
     - _Tiling: 1
+    - _Tilingx: 1
+    - _Tilingy: 1
     - _UVSec: 0
     - _ZWrite: 1
     m_Colors:
