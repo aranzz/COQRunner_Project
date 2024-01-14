@@ -769,11 +769,13 @@ MonoBehaviour:
   - {fileID: 665786095815139348, guid: 99109ddd87180f646a2ab9288f8151f1, type: 3}
   - {fileID: 665786095815139348, guid: 99109ddd87180f646a2ab9288f8151f1, type: 3}
   - {fileID: 4653795489777152238, guid: d08f37441ab959a4a88a42efcd7d0c57, type: 3}
+  - {fileID: 1978986269403876253, guid: 473392ed12f1122409454d09a79d45a4, type: 3}
   positions:
   - {fileID: 7155858035432645170}
   - {fileID: 786434300761611593}
   - {fileID: 3512207096300138677}
   powerUpActive: {fileID: 0}
+  powerUpEggActive: {fileID: 0}
 --- !u!1 &3267465965982604912
 GameObject:
   m_ObjectHideFlags: 0
@@ -2132,6 +2134,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   powerUpinmmunity: {fileID: 0}
   powerUpActive: {fileID: 0}
+  powerUpEggActive: {fileID: 0}
+  powerUpBullActive: {fileID: 0}
   currentTime: {fileID: 0}
   currentScore: {fileID: 0}
   velocity: 20

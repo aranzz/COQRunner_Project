@@ -8,6 +8,8 @@ public class Move : MonoBehaviour
 
     public GameMaster powerUpActive;
     public GameMaster powerUpEggActive;
+    public GameMaster powerUpBullActive;
+
 
 
     public GameMaster currentTime;
@@ -28,6 +30,7 @@ public class Move : MonoBehaviour
 
         powerUpEggActive = FindObjectOfType<GameMaster>();
         powerUpActive = FindObjectOfType<GameMaster>();
+        powerUpBullActive = FindObjectOfType<GameMaster>();
 
         currentTime = FindObjectOfType<GameMaster>();
         currentScore = FindObjectOfType<GameMaster>();
@@ -111,11 +114,21 @@ public class Move : MonoBehaviour
             }
 
 
-                if (other.gameObject.CompareTag("Player"))
+            if (other.gameObject.CompareTag("Player"))
             {
-                currentScore.score++;
-                Debug.Log(currentScore.score);
-                Destroy(gameObject);
+                if(powerUpBullActive.powerUpBullActive == false)
+                {
+                    currentScore.score++;
+                    Debug.Log(currentScore.score);
+                    Destroy(gameObject);
+                }
+                else
+                {
+                    currentScore.score = currentScore.score + 10;
+                    Debug.Log(currentScore.score);
+                    Destroy(gameObject);
+                }
+              
             }
         }
 

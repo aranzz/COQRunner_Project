@@ -15,6 +15,9 @@ public class GameMaster : MonoBehaviour
 
     public bool powerUpEggActive = false;
 
+    public bool powerUpBullActive = false;
+
+
     public int score;
 
     public float velocityMultiplier = 10; 
@@ -65,17 +68,20 @@ public class GameMaster : MonoBehaviour
           
         }
 
-        if (powerUpEggActive)
+        if (powerUpBullActive)
         {
+            powerUpLife += Time.deltaTime;
+            Debug.Log("bull  activado");
 
-            Debug.Log("huevo activado");
-            
-        }
-        else
-        {
-            Debug.Log("huevo NO activado");
+            if (powerUpLife >= 10)
+            {
+                powerUpBullActive = false;
+                powerUpLife = 0;
+
+            }
 
         }
+       
 
         if (timerOn)
         {

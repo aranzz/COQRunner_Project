@@ -11,6 +11,7 @@ TagManager:
   - Crown
   - CoinDetector
   - Egg
+  - Bull
   layers:
   - Default
   - TransparentFX
