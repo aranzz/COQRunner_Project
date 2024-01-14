@@ -14,7 +14,7 @@ public class Move : MonoBehaviour
 
     public GameMaster currentTime;
     public GameMaster currentScore;
-    public float velocity = 30;
+    public float velocity = 50;
 
     public GameObject player;
 
@@ -52,13 +52,13 @@ public class Move : MonoBehaviour
         else
         {
             velocity = currentTime.currentVelocity.velocity;
-            transform.position += new Vector3(0, 0, velocity * 2) * Time.deltaTime;
+            transform.position += new Vector3(0, 0, velocity * 2f) * Time.deltaTime;
 
             if (coinMagnet)
             {
                 if (gameObject.CompareTag("Coin"))
                 {
-                    transform.position = Vector3.MoveTowards(transform.position, player.transform.position, Time.deltaTime * 60);
+                    transform.position = Vector3.MoveTowards(transform.position, player.transform.position, Time.deltaTime * 80);
                 }
             }
         }
@@ -66,7 +66,7 @@ public class Move : MonoBehaviour
 
         if (gameObject.CompareTag("Coin"))
         {
-            transform.Rotate(0, 0, 50 * Time.deltaTime);
+            transform.Rotate(0, 0, 70 * Time.deltaTime);
 
         }
 

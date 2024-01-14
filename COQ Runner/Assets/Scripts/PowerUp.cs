@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PowerUp : MonoBehaviour
 {
-    public float velocity = 30; 
+    public float velocity = 50; 
     public GameMaster currentTime;
 
     public GameMaster powerUpActive;

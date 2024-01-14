@@ -50,7 +50,7 @@ public class GameMaster : MonoBehaviour
 
         currentVelocity = FindObjectOfType<Move>();
 
-      InvokeRepeating("IncreaseSpeed", 5f, 20f); 
+      InvokeRepeating("IncreaseSpeed", 5f, 15); 
 
         timerOn = true;
         //unpause when player moves key 
