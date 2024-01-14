@@ -1,7 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
-
+using UnityEngine.UI;
 using UnityEngine;
+using TMPro;
 
 public class GameMaster : MonoBehaviour
 {
@@ -17,6 +18,7 @@ public class GameMaster : MonoBehaviour
 
     public bool powerUpBullActive = false;
 
+    public TextMeshProUGUI scoreVa;
 
     public int score;
 
@@ -28,9 +30,9 @@ public class GameMaster : MonoBehaviour
     {
          currentVelocity.velocity = currentVelocity.velocity + velocityMultiplier;
 
-        if (currentVelocity.velocity >= 60)
+        if (currentVelocity.velocity >= 75)
         {
-            currentVelocity.velocity = 60;
+            currentVelocity.velocity = 75;
         }
 
     }
@@ -39,6 +41,7 @@ public class GameMaster : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        scoreVa.text = "0";
         score = 0;
         powerUpLife = 0;
 
@@ -53,7 +56,7 @@ public class GameMaster : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-      
+        scoreVa.text = score.ToString();
 
         if (powerUpActive)
         {
