@@ -18,7 +18,10 @@ public class GameMaster : MonoBehaviour
 
     public bool powerUpBullActive = false;
 
-    public TextMeshProUGUI scoreVa;
+    public Text scoreVa;
+
+    public Text powerUpVa;
+
 
     public int score;
 
@@ -60,6 +63,8 @@ public class GameMaster : MonoBehaviour
 
         if (powerUpActive)
         {
+            powerUpVa.text = "Crown Active";
+
             powerUpLife += Time.deltaTime;
 
             if(powerUpLife >= 6)
@@ -68,13 +73,13 @@ public class GameMaster : MonoBehaviour
                 powerUpLife = 0;
              
             }
-          
-        }
 
+        }
+        
         if (powerUpBullActive)
         {
             powerUpLife += Time.deltaTime;
-            Debug.Log("bull  activado");
+            powerUpVa.text = "Bull Active";
 
             if (powerUpLife >= 10)
             {
@@ -84,7 +89,19 @@ public class GameMaster : MonoBehaviour
             }
 
         }
+     
+
+        if (powerUpEggActive)
+        {
+            powerUpVa.text = "Egg Active";
+
+        }
        
+        if(powerUpActive == false && powerUpEggActive == false && powerUpBullActive == false)
+        {
+            powerUpVa.text = " ";
+        }
+
 
         if (timerOn)
         {
