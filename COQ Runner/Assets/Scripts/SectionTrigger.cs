@@ -6,7 +6,7 @@ using UnityEditor;
 public class SectionTrigger : MonoBehaviour
 {
     private Transform Player;
-    public SwipeControls Controls;
+  //  public SwipeControls Controls;
 
     private bool Lane1 = false;
     private bool Lane2 = true;
@@ -30,6 +30,7 @@ public class SectionTrigger : MonoBehaviour
 
     private void Update()
     {
+        /*
         if (Lane3 == true && Player.position.x < 1.1f)
         {
             Player.position += new Vector3(10.5f, 0, 0 * Time.deltaTime);
@@ -74,7 +75,7 @@ public class SectionTrigger : MonoBehaviour
             Lane3 = false;
         }
 
-
+        */
         ///Player.transform.Rotate(0f, 90f, 0f);
 
     }
