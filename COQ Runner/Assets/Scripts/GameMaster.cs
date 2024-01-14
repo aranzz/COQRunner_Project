@@ -6,6 +6,8 @@ using TMPro;
 
 public class GameMaster : MonoBehaviour
 {
+    public ParticleSystem running;
+
     public Move currentVelocity;
 
     public float time;
@@ -63,6 +65,7 @@ public class GameMaster : MonoBehaviour
 
         if (powerUpActive)
         {
+            running.Play();
             powerUpVa.text = "Crown Active";
 
             powerUpLife += Time.deltaTime;
@@ -71,7 +74,7 @@ public class GameMaster : MonoBehaviour
             {
                 powerUpActive = false;
                 powerUpLife = 0;
-             
+
             }
 
         }
